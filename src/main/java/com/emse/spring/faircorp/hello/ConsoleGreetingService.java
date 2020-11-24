@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ConsoleGreetingService implements GreetingService {
+
+    @Override
     public void greet(String name) {
 //        name = "";
         System.out.println("Hello, " + name);

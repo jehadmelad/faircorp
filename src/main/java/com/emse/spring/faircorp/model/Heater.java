@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class Heater {
 
     @Id
+    @GeneratedValue
     private long id;
 
     @Column(nullable = false)
@@ -23,6 +24,9 @@ public class Heater {
 
     @ManyToOne
     private Room room;
+    public Heater(){
+
+    }
 
     public Heater(String name, Room room){
         this.name = name;

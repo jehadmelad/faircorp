@@ -24,19 +24,25 @@ public class Room {
     @Column
     private Double targetTemperature;
 
-    @OneToMany(mappedBy = "room")
+    @OneToMany(mappedBy = "room", cascade=CascadeType.REMOVE)
     private Set<Heater> heater;
 
-    @OneToMany(mappedBy = "room")
+    @OneToMany(mappedBy = "room", cascade=CascadeType.REMOVE)
     private Set<Window> window;
+
+    @ManyToOne
+    private Building building;
 
     public Room() {
     }
 
-    public Room(Integer floor, String name) {
+    public Room(Integer floor, String name, Building building) {
         this.floor = floor;
         this.name = name;
+        this.building = building;
+
     }
+
 
     public Long getId() {
         return id;
@@ -92,5 +98,13 @@ public class Room {
 
     public void setWindow(Set<Window> window) {
         this.window = window;
+    }
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
     }
 }

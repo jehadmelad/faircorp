@@ -24,14 +24,35 @@ public class Heater {
 
     @ManyToOne
     private Room room;
+
+    @ManyToOne
+    private Building building;
+
     public Heater(){
 
     }
 
-    public Heater(String name, Room room){
+    public Heater(String name, Room room, Building building){
         this.name = name;
         this.room = room;
+        this.building =building;
+    }
 
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public long getId() {
@@ -65,4 +86,6 @@ public class Heater {
     public void setHeaterStatus(HeaterStatus heaterStatus) {
         this.heaterStatus = heaterStatus;
     }
+
+
 }

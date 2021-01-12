@@ -9,17 +9,21 @@ import javax.persistence.*;
 public class Window {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.TABLE)
     private Long id;
 
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private WindowStatus windowStatus;
 
     @ManyToOne
     private Room room;
+
+    @ManyToOne
+    private Building building;
 
     public Window() {
     }
@@ -28,6 +32,7 @@ public class Window {
         this.windowStatus = status;
         this.name = name;
         this.room = room;
+//        this.building = building;
     }
 
     public Long getId() {
@@ -60,5 +65,13 @@ public class Window {
 
     public void setRoom(Room room) {
         this.room = room;
+    }
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
     }
 }

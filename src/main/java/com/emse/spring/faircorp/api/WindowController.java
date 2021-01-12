@@ -59,7 +59,7 @@ public class WindowController {
     public WindowDto create(@RequestBody WindowDto dto) {
         Room room = roomDao.getOne(dto.getRoom().getId());
         Window window = null;
-        return new WindowDto(windowDao.save(new Window( dto.getName(), dto.getWindowStatus(),room)));
+        return new WindowDto(windowDao.save(new Window( dto.getName(), dto.getStatus(),room)));
 
 // ##################################################################################################
 //        // WindowDto must always contain the window room

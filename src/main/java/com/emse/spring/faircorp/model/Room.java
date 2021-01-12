@@ -36,10 +36,10 @@ public class Room {
     public Room() {
     }
 
-    public Room(Integer floor, String name, Building building) {
+    public Room(Integer floor, String name) {
         this.floor = floor;
         this.name = name;
-        this.building = building;
+//        this.building = building;
 
     }
 

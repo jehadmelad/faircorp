@@ -7,20 +7,20 @@ import javax.persistence.Column;
 public class RoomDto {
 
     private Long id;
-    private Integer floor;
+    private Integer level;
     private String name;
     private Double currentTemperature;
     private Double targetTemperature;
-    private BuildingDto building;
+//    private BuildingDto building;
 
     public RoomDto(){ }
     public RoomDto(Room room){
         this.id = room.getId();
         this.name = room.getName();
-        this.floor=room.getFloor();
+        this.level=room.getFloor();
         this.currentTemperature = room.getCurrentTemperature();
         this.targetTemperature = room.getTargetTemperature();
-        this.building = new BuildingDto(room.getBuilding());
+//        this.building = new BuildingDto(room.getBuilding());
     }
 
     public Long getId() {
@@ -31,12 +31,12 @@ public class RoomDto {
         this.id = id;
     }
 
-    public Integer getFloor() {
-        return floor;
+    public Integer getLevel() {
+        return level;
     }
 
-    public void setFloor(Integer floor) {
-        this.floor = floor;
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     public String getName() {
@@ -71,11 +71,13 @@ public class RoomDto {
 //        this.buildingId = buildingId;
 //    }
 
-    public BuildingDto getBuilding() {
-        return building;
-    }
 
-    public void setBuilding(BuildingDto building) {
-        this.building = building;
-    }
+
+//    public BuildingDto getBuilding() {
+//        return building;
+//    }
+//
+//    public void setBuilding(BuildingDto building) {
+//        this.building = building;
+//    }
 }
